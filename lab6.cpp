@@ -1,4 +1,5 @@
 #include "make_random_vector.hpp"
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -23,8 +24,11 @@ int main()
     string ciag;
     cin >> ciag;
     cout << ciag;
-    auto il = adjacent_find(ciag.begin(), ciag.end());
-    if (il == ciag.end())
+    string s   = "piesek";
+    string k   = "kotek";
+    auto   il  = search(ciag.begin(), ciag.end(), s.begin(), s.end());
+    auto   il2 = search(ciag.begin(), ciag.end(), k.begin(), k.end());
+    if (il == ciag.end() && il2 == ciag.end())
         return 0;
     else
         return 1;
